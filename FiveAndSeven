@@ -1,0 +1,30 @@
+using System;
+
+namespace FiveAndSeven
+{
+    class FiveAndSeven
+    {
+        static void Main()
+        {
+            bool tryParse = false;
+            bool checkResult;
+
+            do
+            {
+                Console.Write("Enter your number: ");
+                tryParse = int.TryParse(Console.ReadLine(), out int num);
+                if(tryParse == true)
+                {
+                    checkResult = (num % 5 == 0 && num % 7 == 0);
+                    if(checkResult == false)
+                    {
+                        Console.WriteLine("Your number (" + num + ") cannot be divided.");
+                    } else
+                    {
+                        Console.WriteLine("Your number (" + num + ") can be divided.");
+                    }
+                }
+            } while (tryParse == false);
+        }
+    }
+}
