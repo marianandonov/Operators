@@ -1,0 +1,37 @@
+using System;
+using System.Collections;
+using System.Transactions;
+
+namespace IsItSeven
+{
+    class IsItSeven
+    {
+        static void Main()
+        {
+            bool tryParse = false;
+
+            do
+            {
+                Console.Write("Enter a number: ");
+                tryParse = int.TryParse(Console.ReadLine(), out int num);
+
+                if (tryParse == true)
+                {
+                    bool check = (num / 100) % 10 == 7 ? true : false;
+
+                    switch (check)
+                    {
+                        case true:
+                            Console.WriteLine("The third digit of your number ("
+                                + num + ") is 7!");
+                            break;
+                        default:
+                            Console.WriteLine("The third digit of your number ("
+                                + num + ") isn't 7!");
+                            break;
+                    }
+                }
+            } while (tryParse == false);
+        }
+    }
+}
