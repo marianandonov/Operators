@@ -1,0 +1,25 @@
+using System;
+
+namespace CheckBit
+{
+    class CheckBit
+    {
+        static void Main(string[] args)
+        {
+            bool tryParse = false;
+
+            do
+            {
+                Console.Write("Enter a digit: ");
+                tryParse = int.TryParse(Console.ReadLine(), out int num);
+                if(tryParse == true && (num >> 3) == 1)
+                {
+                    Console.WriteLine("The third number is 1!");
+                } else
+                {
+                    Console.WriteLine("The third number isn't 1!");
+                }
+            } while (tryParse == false);
+        }
+    }
+}
