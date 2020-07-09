@@ -1,0 +1,34 @@
+using System;
+
+namespace OddEvenCheck
+{
+    class OddEvenCheck
+    {
+        static void Main()
+        {
+
+            bool tryParse;
+
+            do
+            {
+                Console.Write("Enter your number: ");
+                string num = Console.ReadLine();
+                tryParse = int.TryParse(num, out int result);
+
+                if(tryParse == true)
+                {
+                    if (result % 2 == 0)
+                    {
+                        Console.WriteLine("Your number (" + result + ") is even!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Your number (" + result + ") is odd!");
+                    }
+                }
+            } while (tryParse == false);
+
+
+        }
+    }
+}
