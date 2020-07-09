@@ -1,0 +1,27 @@
+using System;
+
+namespace Regtangle
+{
+    class Regtangle
+    {
+        static void Main()
+        {
+            bool tryParse = false;
+
+            do
+            {
+                Console.Write("Enter value for a: ");
+                tryParse = double.TryParse(Console.ReadLine(), out double a);
+                if(tryParse == true)
+                {
+                    Console.Write("Enter value for b: ");
+                    tryParse = double.TryParse(Console.ReadLine(), out double b);
+                    if(tryParse == true)
+                    {
+                        Console.WriteLine("S = " + (a * b) + "; P = " + ((a + b) * 2));
+                    }
+                }
+            } while (tryParse == false);
+        }
+    }
+}
