@@ -1,0 +1,43 @@
+using System;
+
+namespace Position
+{
+    class Position
+    {
+        static void Main(string[] args)
+        {
+            bool tryParse = false;
+            int i = 1;
+
+            do
+            {
+                Console.Write("Enter a number: ");
+                tryParse = int.TryParse(Console.ReadLine(), out int num);
+                if(tryParse == true)
+                {
+                    Console.Write("Enter a position: ");
+                    tryParse = int.TryParse(Console.ReadLine(), out int position);
+                    if (tryParse == true)
+                    {
+                        int checkPosition = i << position;
+                        if((checkPosition & num) != 0)
+                        {
+                            Console.WriteLine("n = " + num + "; p = " + position
+                           + " -> 1");
+                        } else
+                        {
+                            Console.WriteLine("n = " + num + "; p = " + position
+                           + " -> 0");
+                        }
+                    } else
+                    {
+                        Console.WriteLine("Incorrect position!");
+                    }
+                } else
+                {
+                    Console.WriteLine("That's not a number!");
+                }
+            } while (tryParse == false);
+        }
+    }
+}
