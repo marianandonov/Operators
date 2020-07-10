@@ -1,8 +1,8 @@
 using System;
 
-namespace Regtangle
+namespace Rectangle
 {
-    class Regtangle
+    class Rectangle
     {
         static void Main()
         {
