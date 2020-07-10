@@ -1,0 +1,38 @@
+using System;
+
+namespace Circle
+{
+    class Circle
+    {
+        static void Main()
+        {
+            int pointX = 0;
+            int pointY = 0;
+            int radius = 5;
+
+            bool tryParse = false;
+
+            do
+            {
+                Console.Write("Enter point x: ");
+                tryParse = int.TryParse(Console.ReadLine(), out int x);
+                if(tryParse == true)
+                {
+                    Console.Write("Enter point y: ");
+                    tryParse = int.TryParse(Console.ReadLine(), out int y);
+                    if(tryParse == true)
+                    {
+                        if ((x - pointX) * (x - pointX) + 
+                            (y - pointY) * (y - pointY) <= radius * radius)
+                        {
+                            Console.WriteLine("Your x(" + x + ") and y(" + y + ") are inside the circle.");
+                        } else
+                        {
+                            Console.WriteLine("Your x(" + x + ") and (" + y + ") are not inside the circle.");
+                        }
+                    }
+                }
+            } while (tryParse == false);
+        }
+    }
+}
