@@ -1,0 +1,23 @@
+using System;
+
+namespace Weight
+{
+    class Weight
+    {
+        static void Main()
+        {
+            bool tryParse = false;
+
+            do
+            {
+                Console.Write("Enter your weight: ");
+                tryParse = float.TryParse(Console.ReadLine(), out float weight);
+                if(tryParse == true)
+                {
+                    float moonWeight = (17.0f / 100.0f) * weight;
+                    Console.WriteLine("Your weight on the moon is " + moonWeight + "kg.");
+                }
+            } while (tryParse == false);
+        }
+    }
+}
