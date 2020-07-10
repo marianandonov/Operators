@@ -1,0 +1,39 @@
+using System;
+
+namespace FourNumbers
+{
+    class Program
+    {
+        static void Main()
+        {
+            bool tryParse = false;
+            string getNums;
+            int sum;
+
+            do
+            {
+                Console.Write("Enter a four digit number: ");
+                tryParse = short.TryParse(Console.ReadLine(), out short nums);
+                if(tryParse == true)
+                {
+                    getNums = nums.ToString();
+                    if(getNums.Length == 4)
+                    {
+                        sum = getNums[0] + getNums[1] + getNums[2] + getNums[3];
+                        Console.WriteLine("Sum: " + sum);
+                        Console.WriteLine("Backwards: " + getNums[3] + getNums[2] + getNums[1] + getNums[0]);
+                        Console.WriteLine("Last digit to first: " + getNums[3] + getNums[0] + getNums[1] + getNums[2]);
+                        Console.WriteLine("Second and third digit swaped: " + getNums[0] + getNums[2] + getNums[1] + getNums[3]);
+                    } else
+                    {
+                        Console.WriteLine("4 digits only!");
+                        tryParse = false;
+                    }
+                } else
+                {
+                    Console.WriteLine("Numbers only!");
+                }
+            } while (tryParse == false);
+        }
+    }
+}
