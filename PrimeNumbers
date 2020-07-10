@@ -1,0 +1,46 @@
+using System;
+
+namespace CheckNumber
+{
+    class CheckNumber
+    {
+        static void Main()
+        {
+            bool tryParse = false;
+            bool checkIfPrime = true;
+            int num;
+
+            do
+            {
+                Console.Write("Enter a number between 1 and 100: ");
+                tryParse = int.TryParse(Console.ReadLine(), out num);
+                if(tryParse == true && (num > 0 && num <= 100))
+                {
+                    if (num > 2)
+                    {
+                        for (int i = 2; i <= Math.Ceiling(Math.Sqrt(num)); ++i)
+                        {
+                            if (num % i == 0)
+                            {
+                                checkIfPrime = false;
+                                break;
+                            }
+                        }
+                    }   
+                } else
+                {
+                    Console.WriteLine("Either it's not a number or it's\n higher than 100 or lower than 1!");
+                    tryParse = false;
+                }
+            } while (tryParse == false);
+
+            if(checkIfPrime == true)
+            {
+                Console.WriteLine("Your number(" + num + ") is a prime number!");
+            } else
+            {
+                Console.WriteLine("Your number(" + num + ") is not a prime number!");
+            }
+        }
+    }
+}
