@@ -6,10 +6,6 @@ namespace Circle
     {
         static void Main()
         {
-            int pointX = 0;
-            int pointY = 0;
-            int radius = 5;
-
             bool tryParse = false;
 
             do
@@ -22,13 +18,23 @@ namespace Circle
                     tryParse = int.TryParse(Console.ReadLine(), out int y);
                     if(tryParse == true)
                     {
-                        if ((x - pointX) * (x - pointX) + 
-                            (y - pointY) * (y - pointY) <= radius * radius)
+
+                        /////Task 8
+                        if ((x * x) + (y * y) <= 5)
                         {
                             Console.WriteLine("Your x(" + x + ") and y(" + y + ") are inside the circle.");
                         } else
                         {
                             Console.WriteLine("Your x(" + x + ") and (" + y + ") are not inside the circle.");
+                        }
+
+                        /////Task 9
+                        if (x < -1 && x > 5 && y < 1 && y > 5)
+                        {
+                            Console.WriteLine("Your x(" + x + ") and y(" + y + ") are not inside the rectangle.");
+                        } else
+                        {
+                            Console.WriteLine("Your x(" + x + ") and y(" + y + ") are inside the rectangle.");
                         }
                     }
                 }
