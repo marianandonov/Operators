@@ -1,0 +1,20 @@
+using System;
+
+namespace NumPositionV
+{
+    class NumPositionV
+    {
+        static void Main()
+        {
+            int n = 35;
+            int v = 1;
+            int p = 2;
+            n = (v == 0) ? n = n & (~(1 << p)) : n = n | (1 << p);
+            Console.WriteLine(n);
+
+            /*Тази задача не я разбрах и не можах да я реша.
+            Извадих този код от интернет и работеше, 
+            но още не схващам как точно трябва да работи.*/
+        }
+    }
+}
