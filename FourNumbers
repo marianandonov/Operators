@@ -19,7 +19,8 @@ namespace FourNumbers
                     getNums = nums.ToString();
                     if(getNums.Length == 4)
                     {
-                        sum = getNums[0] + getNums[1] + getNums[2] + getNums[3];
+                        sum = int.Parse(getNums[0].ToString()) + int.Parse(getNums[1].ToString()) +
+                            int.Parse(getNums[2].ToString()) + int.Parse(getNums[3].ToString());
                         Console.WriteLine("Sum: " + sum);
                         Console.WriteLine("Backwards: " + getNums[3] + getNums[2] + getNums[1] + getNums[0]);
                         Console.WriteLine("Last digit to first: " + getNums[3] + getNums[0] + getNums[1] + getNums[2]);
