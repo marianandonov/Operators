@@ -1,0 +1,35 @@
+using System;
+
+namespace CheckPosition
+{
+    class Program
+    {
+        static void Main()
+        {
+            bool tryParse = false;
+            int i = 1;
+
+            do
+            {
+                Console.Write("Enter a number: ");
+                tryParse = int.TryParse(Console.ReadLine(), out int v);
+                if(tryParse == true)
+                {
+                    Console.Write("Enter a postion: ");
+                    tryParse = int.TryParse(Console.ReadLine(),out int position);
+                    if(tryParse == true)
+                    {
+                        bool checkPosition = (v & (i << position)) != 0 ? true : false;
+                        Console.WriteLine("v = " + v + "; p = " + position + " -> " + checkPosition);
+                    } else
+                    {
+                        Console.WriteLine("Incorrect position!");
+                    }
+                } else
+                {
+                    Console.WriteLine("That's not a number!");
+                }
+            } while (tryParse == false);
+        }
+    }
+}
